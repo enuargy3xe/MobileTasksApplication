@@ -86,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
                         userList = response.body().getUser();
                         Toast.makeText(getApplicationContext(),userList.get(0).getName().toString(),Toast.LENGTH_LONG).show();
                         MetaData.setUser_id(userList.get(0).getUserId().toString());
+                        MetaData.setUser_name(userList.get(0).getName());
+                        MetaData.setUser_surname(userList.get(0).getSurname());
+                        MetaData.setUser_image(userList.get(0).getUserImage());
                         Intent successIntent = new Intent(getApplicationContext(),WorkSpaceActivity.class);
                         startActivity(successIntent);
                     }

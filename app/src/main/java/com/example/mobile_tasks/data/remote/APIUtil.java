@@ -16,4 +16,26 @@ public class APIUtil {
     public static API getContacts(){
         return RetrofitClient.getClient(BASE_URL).create(API.class);
     }
+
+    public static API getFindUser(){
+        return RetrofitClient.getClient(BASE_URL).create(API.class);
+    }
+
+    public static API addNewContact(){
+        return RetrofitClient.getClient(BASE_URL).create(API.class);
+    }
+
+    public static API removeContact(){
+        return RetrofitClient.getClient(BASE_URL).create(API.class);
+    }
+
+    public static API addNewTask(){return RetrofitClient.getClient(BASE_URL).create(API.class);}
+
+    public static API getIssuedTasks(){return RetrofitClient.getClient(BASE_URL).create(API.class);}
+
+    public static API getMyTasks(){return RetrofitClient.getClient(BASE_URL).create(API.class);}
+
+    public static API changeStatus(){return RetrofitClient.getClient(BASE_URL).create(API.class);}
+
+    public static API updateUserAvatar(){return RetrofitClient.getClient(BASE_URL).create(API.class);}
 }

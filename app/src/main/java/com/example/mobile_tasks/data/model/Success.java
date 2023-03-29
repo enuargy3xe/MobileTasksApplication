@@ -17,6 +17,9 @@ public class Success {
     @SerializedName("Contacts")
     @Expose
     private List<Contacts> contacts;
+    @SerializedName("Tasks")
+    @Expose
+    private List<Tasks> tasks;
 
     public Integer getSuccess() {
         return success;
@@ -42,4 +45,11 @@ public class Success {
         this.contacts = contacts;
     }
 
+    public List<Tasks> getTasks(){
+        return tasks;
+    }
+
+    public void setTasks(List<Tasks> tasks){
+        this.tasks = tasks;
+    }
 }

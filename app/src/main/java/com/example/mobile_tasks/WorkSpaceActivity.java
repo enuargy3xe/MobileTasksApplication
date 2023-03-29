@@ -29,6 +29,7 @@ public class WorkSpaceActivity extends AppCompatActivity {
 
         bottomNavBar = findViewById(R.id.bottomNavigationView);
 
+        setFragment(TasksFragment.newInstance());
         bottomNavBar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -36,12 +37,13 @@ public class WorkSpaceActivity extends AppCompatActivity {
                 switch(item.getItemId()){
                     case R.id.contacts_view:
                         setFragment(ContactsFragment.newInstance());
+
                         break;
                     case R.id.new_task:
-                        Toast.makeText(WorkSpaceActivity.this,"New Task",Toast.LENGTH_LONG).show();
+                        setFragment(TasksFragment.newInstance());
                         break;
                     case R.id.profile_view:
-                        Toast.makeText(WorkSpaceActivity.this,"Profile clicked",Toast.LENGTH_LONG).show();
+                        setFragment(ProfileFragment.newInstance());
                         break;
                 }
                 return true;
@@ -52,8 +54,9 @@ public class WorkSpaceActivity extends AppCompatActivity {
     private void setFragment(Fragment fragment){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frameLayout,fragment);
-        transaction.addToBackStack(null);
+        transaction.setReorderingAllowed(false);
         transaction.commit();
     }
+
 
 }
